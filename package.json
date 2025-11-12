@@ -1,0 +1,98 @@
+{
+  "name": "cryptobroz-ui-starter",
+  "description": "CryptoBroz UI Starter - A modern Web3 crypto platform with wallet integration, real-time price tracking, and transaction management",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "author": {
+    "name": "@thevangelist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CRYPTOBROZ/cryptobroz-ui-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CRYPTOBROZ/cryptobroz-ui-starter/issues"
+  },
+  "homepage": "https://github.com/CRYPTOBROZ/cryptobroz-ui-starter#readme",
+  "license": "MIT",
+  "keywords": [
+    "nextjs",
+    "nextjs16",
+    "react19",
+    "web3",
+    "ethereum",
+    "crypto",
+    "wallet",
+    "defi",
+    "dapp",
+    "blockchain",
+    "typescript",
+    "rainbowkit",
+    "wagmi",
+    "viem",
+    "tailwindcss",
+    "daisyui",
+    "etherscan",
+    "coingecko"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint \"src/**/*.+(ts|js|tsx)\"",
+    "lint:fix": "eslint \"src/**/*.+(ts|js|tsx)\" --fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "format:ci": "prettier --list-different .",
+    "postinstall": "husky"
+  },
+  "dependencies": {
+    "@rainbow-me/rainbowkit": "2.2.9",
+    "@t3-oss/env-nextjs": "0.13.8",
+    "@tanstack/react-query": "5.90.8",
+    "babel-plugin-react-compiler": "1.0.0",
+    "lucide-react": "0.553.0",
+    "next": "16.0.1",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "viem": "2.39.0",
+    "wagmi": "2.19.3",
+    "zod": "4.1.12"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "20.1.0",
+    "@commitlint/config-conventional": "20.0.0",
+    "@eslint/js": "9.39.1",
+    "@ianvs/prettier-plugin-sort-imports": "4.7.0",
+    "@svgr/webpack": "8.1.0",
+    "@types/node": "24.10.0",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "autoprefixer": "10.4.22",
+    "daisyui": "5.5.0",
+    "eslint": "9.39.1",
+    "eslint-config-next": "16.0.1",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.4",
+    "husky": "9.1.7",
+    "lint-staged": "16.2.6",
+    "postcss": "8.5.6",
+    "prettier": "3.6.2",
+    "prettier-plugin-sort-json": "4.1.1",
+    "tailwindcss": "3.4.18",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.46.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.2.2",
+      "@types/react-dom": "19.2.2"
+    }
+  }
+}

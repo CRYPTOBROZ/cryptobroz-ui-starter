@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+
+  /* Purple & Gold Color Scheme */
+  --color-primary: #6a1b9a;
+  --color-primary-dark: #4a148c;
+  --color-secondary: #00bcd4;
+  --color-accent: #ffb300;
+  --color-accent-light: #ffc107;
+  --color-info: #00bcd4;
+  --color-success: #e91e63;
+  --color-warning: #ffb300;
+  --color-error: #e91e63;
+
+  /* Light Mode Colors */
+  --color-base-100: #ffffff;
+  --color-base-200: #f5f5f5;
+  --color-base-300: #e0e0e0;
+  --color-base-content: #212121;
+  --color-neutral: #f5f5f5;
+  --color-neutral-content: #212121;
+}
+
+:root[data-theme='dark'] {
+  /* Dark Mode Colors */
+  --color-base-100: #1a1a1a;
+  --color-base-200: #2d2d2d;
+  --color-base-300: #424242;
+  --color-base-content: #f5f5f5;
+  --color-neutral: #212121;
+  --color-neutral-content: #f5f5f5;
+}
+
+/* Theme Switcher with :has() selector */
+.theme-radio {
+  display: none;
+}
+
+/* Apply dark theme when dark radio is checked */
+html:has(#theme-dark:checked) {
+  --color-base-100: #1a1a1a;
+  --color-base-200: #2d2d2d;
+  --color-base-300: #424242;
+  --color-base-content: #f5f5f5;
+  --color-neutral: #212121;
+  --color-neutral-content: #f5f5f5;
+  color-scheme: dark;
+}
+
+/* Apply light theme when light radio is checked */
+html:has(#theme-light:checked) {
+  --color-base-100: #ffffff;
+  --color-base-200: #f5f5f5;
+  --color-base-300: #e0e0e0;
+  --color-base-content: #212121;
+  --color-neutral: #f5f5f5;
+  --color-neutral-content: #212121;
+  color-scheme: light;
+}
+
+/* Active state for theme buttons */
+#theme-dark:checked ~ div .dark-label {
+  @apply bg-primary text-white;
+}
+
+#theme-light:checked ~ div .light-label {
+  @apply bg-accent text-neutral;
+}
+
+/* Universal Design System */
+@layer components {
+  /* Consistent card styling */
+  .card-system {
+    @apply bg-base-300 rounded-lg shadow-md;
+  }
+
+  /* Consistent badge styling */
+  .badge-system {
+    @apply badge font-inter uppercase tracking-wide shadow-sm;
+  }
+
+  /* Consistent button styling */
+  .btn-system {
+    @apply font-inter font-bold uppercase tracking-wide transition-all shadow-sm hover:shadow-md;
+  }
+
+  /* Smart input sizing with guardrails */
+  .input-smart {
+    field-sizing: content;
+    min-width: 200px;
+    max-width: 100%;
+  }
+}
+
+/* View Transitions API */
+@layer utilities {
+  /* Enable view transitions for supported browsers */
+  @view-transition {
+    navigation: auto;
+  }
+
+  /* Customize the animation for new and old content */
+  ::view-transition-old(root) {
+    animation: fade-out 0.3s ease-in-out;
+  }
+
+  ::view-transition-new(root) {
+    animation: fade-in 0.3s ease-in-out;
+  }
+
+  /* Fade animations */
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
