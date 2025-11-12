@@ -11,6 +11,10 @@
 
 Modern Web3 application with Next.js 16, React 19, TypeScript, RainbowKit, and Wagmi. Features wallet integration, real-time ETH price tracking, transaction history, and secure ETH transfers.
 
+<div align="center">
+  <img src="screenshots/send-eth-page.png" alt="Send ETH Interface" width="800" />
+</div>
+
 ## Features
 
 - **Web3**: RainbowKit wallet connection, Wagmi hooks, Viem library, multi-chain support (Mainnet/Sepolia)
@@ -69,6 +73,7 @@ src/
 ## Security Notes
 
 **For Production:**
+
 - Remove `NEXT_PUBLIC_` prefix from Etherscan API key (move to server-side)
 - Never commit `.env.local` file
 - Test on Sepolia testnet before using mainnet
