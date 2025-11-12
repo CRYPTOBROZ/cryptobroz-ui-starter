@@ -6,7 +6,10 @@
       "Bash(npm run format:*)",
       "Bash(npm run lint)",
       "Bash(npm run build:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git -C /Users/esalahikainen/Oma/cryptobroz-ui-starter ls-files:*)",
+      "Bash(git rm:*)",
+      "Bash(rm:*)"
     ],
     "deny": [],
     "ask": []
