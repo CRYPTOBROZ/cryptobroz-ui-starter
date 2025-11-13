@@ -57,7 +57,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                     onClick={onClose}
                     className={`
                       flex items-center gap-3 rounded-lg
-                      ${isActive ? 'active bg-primary text-primary-content' : 'hover:bg-base-200'}
+                      ${isActive ? 'active bg-white text-black' : 'hover:bg-base-200'}
                     `}
                   >
                     <Icon className="w-5 h-5" />

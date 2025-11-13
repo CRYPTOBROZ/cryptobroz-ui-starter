@@ -18,9 +18,15 @@ export function CryptoNav({ onMenuClick }: CryptoNavProps) {
         </button>
         <Link href="/" className="cursor-pointer">
           <img
+            src="/logo-w.png"
+            alt="CryptoBroz"
+            className="logo-light w-48 h-auto"
+            style={{ imageRendering: '-webkit-optimize-contrast' }}
+          />
+          <img
             src="/logo.png"
             alt="CryptoBroz"
-            className="w-48 h-auto"
+            className="logo-dark w-48 h-auto"
             style={{ imageRendering: '-webkit-optimize-contrast' }}
           />
         </Link>

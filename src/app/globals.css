@@ -71,6 +71,23 @@ html:has(#theme-light:checked) {
   @apply bg-accent text-neutral;
 }
 
+/* Theme-aware logo switching */
+.logo-light {
+  display: none;
+}
+
+.logo-dark {
+  display: block;
+}
+
+html:has(#theme-light:checked) .logo-light {
+  display: block;
+}
+
+html:has(#theme-light:checked) .logo-dark {
+  display: none;
+}
+
 /* Universal Design System */
 @layer components {
   /* Consistent card styling */

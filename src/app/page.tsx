@@ -55,7 +55,8 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-start py-8 space-y-8 max-w-7xl mx-auto w-full">
       <div className="text-center space-y-4 px-4">
-        <img src="/logo.png" alt="CryptoBroz" className="w-full max-w-xl mx-auto mt-10 mb-20" />
+        <img src="/logo-w.png" alt="CryptoBroz" className="logo-light w-full max-w-xl mx-auto mt-10 mb-20" />
+        <img src="/logo.png" alt="CryptoBroz" className="logo-dark w-full max-w-xl mx-auto mt-10 mb-20" />
 
         <p className="text-base md:text-lg font-inter text-base-content/70 max-w-2xl mx-auto">
           A crypto platform with wallet integration, real-time price tracking, and transaction management
