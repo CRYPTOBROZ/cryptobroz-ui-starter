@@ -1,6 +1,6 @@
 'use client';
 
-import { AlertCircle, CheckCircle, ExternalLink } from 'lucide-react';
+import { AlertCircle, CheckCircle, ExternalLink, Wallet } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { formatEther, parseEther } from 'viem';
@@ -15,7 +15,6 @@ export function SendMoney() {
   const [recipient, setRecipient] = useState('');
   const [amount, setAmount] = useState('');
   const [ethToEur, setEthToEur] = useState<number>(0);
-  const [ethToUsd, setEthToUsd] = useState<number>(0);
   const [loading, setLoading] = useState(true);
   const [errors, setErrors] = useState({ recipient: '', amount: '' });
 
@@ -26,13 +25,11 @@ export function SendMoney() {
         const response = await fetch('/api/prices');
         const data = await response.json();
         setEthToEur(data.ethereum.eur);
-        setEthToUsd(data.ethereum.usd);
         setLoading(false);
       } catch (error) {
         console.error('Failed to fetch ETH price:', error);
         // Fallback to mock data if API fails
         setEthToEur(3250.5);
-        setEthToUsd(3500.0);
         setLoading(false);
       }
     };
@@ -44,7 +41,6 @@ export function SendMoney() {
   }, []);
 
   const eurValue = amount ? (parseFloat(amount) * ethToEur).toFixed(2) : '0.00';
-  const usdValue = amount ? (parseFloat(amount) * ethToUsd).toFixed(2) : '0.00';
   const availableBalance = balance ? parseFloat(formatEther(balance.value)) : 0;
 
   const isMainnet = chain?.id === 1;
@@ -104,7 +100,13 @@ export function SendMoney() {
   const isFormValid = recipient && amount && !errors.recipient && !errors.amount;
 
   if (!isConnected) {
-    return null;
+    return (
+      <div className="bg-neutral shadow-lg rounded-lg max-w-4xl mx-auto p-8 text-center">
+        <Wallet className="w-16 h-16 mx-auto mb-4 text-primary" />
+        <h2 className="text-2xl font-inter font-bold mb-2">Connect Your Wallet</h2>
+        <p className="text-base-content/70 font-inter">Please connect your wallet to view your portfolio</p>
+      </div>
+    );
   }
 
   return (
