@@ -131,6 +131,21 @@ Configure environment variables in your hosting platform.
 
 MIT License - see [LICENSE.md](LICENSE.md)
 
+## More Screenshots
+
+<div align="center">
+
+### Home Page
+<img src="screenshots/home-page.png" alt="Home Page" width="800" />
+
+### Portfolio Page
+<img src="screenshots/portfolio-page.png" alt="Portfolio Page" width="800" />
+
+### Send ETH Page
+<img src="screenshots/send-eth-page.png" alt="Send ETH Page" width="800" />
+
+</div>
+
 ---
 
 **Note:** Demo application for educational purposes. Test thoroughly on Sepolia testnet before handling real cryptocurrency.
